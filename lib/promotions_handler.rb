@@ -1,7 +1,11 @@
+require 'promotions_parser'
+
 class PromotionsHandler
   def initialize promotions, products
-    extract_rules promotions
     @products = products
+    @promotions_parser = PromotionsParser.new promotions
+    @value_rules = @promotions_parser.value_rules
+    @volume_rules = @promotions_parser.volume_rules
   end
 
   def apply_volume_discounts basket
@@ -16,15 +20,6 @@ class PromotionsHandler
   end
 
   private
-
-    def extract_rules promotions
-      @value_rules = parse_rules(promotions)[:value_rules]
-      @volume_rules = parse_rules(promotions)[:volume_rules]
-    end
-
-    def parse_rules promotions
-      JSON.parse promotions.to_json, symbolize_names: true
-    end
 
     def get_value_rate basket_amount
       rate = 0
