@@ -10,14 +10,16 @@ class Checkout
   end
 
   def scan product_code
-    if PRODUCTS[product_code.to_sym]
-      # add to basket
-    else
-      raise PRODUCT_NOT_FOUND_ERROR
-    end
+    PRODUCTS[product_code.to_sym] ? add_to_basket : raise(PRODUCT_NOT_FOUND_ERROR)
   end
 
   def total
 
   end
+
+  private
+
+    def add_to_basket
+
+    end
 end
