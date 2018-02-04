@@ -1,10 +1,9 @@
-#Ruby project boilerplate
+#Ruby Checkout System
 
-This is a Ruby boilerplate that comes with RSpec and automated test functionality setup(uses Guard)
+A simple ruby checkout system with flexible promotional rules. 
+What are flexible promo rules I hear you say? 
+It simply means the json file `promo_rules.json` is responsible for dictating the available promotions for the checkout system
 
-I'm a fan of test driven development, in order to speed up my turnaround time from writing functionality to testing the functionality, I use Guard(https://github.com/guard/guard) tool to automatically run my test any time I make a change.
-
-This greatly speeds up my development time and hopefully it'll help you too.
 
 ##Quick start
 
