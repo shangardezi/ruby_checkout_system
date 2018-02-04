@@ -10,7 +10,7 @@ class Checkout
   end
 
   def scan product_code
-    PRODUCTS[product_code.to_sym] ? add_to_basket : raise(PRODUCT_NOT_FOUND_ERROR)
+    PRODUCTS[product_code.to_sym] ? add_to_basket(product_code) : raise(PRODUCT_NOT_FOUND_ERROR)
   end
 
   def total
@@ -19,7 +19,7 @@ class Checkout
 
   private
 
-    def add_to_basket
+    def add_to_basket product_code
 
     end
 end
