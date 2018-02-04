@@ -1,7 +1,10 @@
 require 'errors'
+require 'calculator'
 
 class Checkout
   include Errors
+
+  attr_reader :calculator, :basket
 
   PRODUCTS =  { '001': { name: 'Very Cheap Chair', price: 9.25 },
                 '002': { name: 'Little table', price: 45.00 },
@@ -9,6 +12,7 @@ class Checkout
 
   def initialize promo_rules
     promotions = promo_rules
+    @calculator = Calculator.new promotions, PRODUCTS
     @basket = Hash.new 0
   end
 
@@ -17,7 +21,7 @@ class Checkout
   end
 
   def total
-
+    @calculator.total @basket
   end
 
   private
