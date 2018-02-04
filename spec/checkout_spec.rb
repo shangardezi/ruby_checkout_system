@@ -18,6 +18,7 @@ RSpec.describe Checkout do
   end
 
   describe '#total' do
+
   end
 
   private
