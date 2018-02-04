@@ -1,5 +1,3 @@
-require 'pry'
-
 class Calculator
   def initialize promotions, products
     parse_and_convert promotions
