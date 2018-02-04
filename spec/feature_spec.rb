@@ -1,7 +1,7 @@
 require 'checkout'
 
 RSpec.describe 'Feature' do
-  let(:checkout){ Checkout.new(promo_rules) }
+  let(:checkout){ Checkout.new(promo_rules_json) }
 
   subject { checkout.total }
 

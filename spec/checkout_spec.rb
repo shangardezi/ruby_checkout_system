@@ -3,7 +3,7 @@ require 'pry'
 
 RSpec.describe Checkout do
 
-  subject { described_class.new promo_rules }
+  subject { described_class.new promo_rules_json }
 
   describe '#scan' do
     let(:invalid_product_error) { Checkout::PRODUCT_NOT_FOUND_ERROR }

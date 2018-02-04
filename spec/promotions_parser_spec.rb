@@ -1,7 +1,7 @@
 require 'promotions_parser'
 
 RSpec.describe PromotionsParser do
-  let(:promotion_parser) { described_class.new promo_rules }
+  let(:promotion_parser) { described_class.new promo_rules_json }
 
   describe '#value_rules' do
     subject { promotion_parser.value_rules.first }

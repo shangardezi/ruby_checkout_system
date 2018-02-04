@@ -3,7 +3,7 @@ require 'calculator'
 RSpec.describe Calculator do
   let(:basket) { { '002': 3 } }
 
-  subject { described_class.new(promo_rules, dummy_products) }
+  subject { described_class.new(promo_rules_json, dummy_products) }
 
   describe '#total' do
 

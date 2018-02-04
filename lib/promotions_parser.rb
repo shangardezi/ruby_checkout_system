@@ -14,6 +14,6 @@ class PromotionsParser
   private
 
     def parse_json
-      JSON.parse @promotions.to_json, symbolize_names: true
+      JSON.parse @promotions, symbolize_names: true
     end
 end

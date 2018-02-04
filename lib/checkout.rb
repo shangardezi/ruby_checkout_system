@@ -1,5 +1,5 @@
-require 'errors'
-require 'calculator'
+require_relative 'errors'
+require_relative 'calculator'
 
 class Checkout
   include Errors

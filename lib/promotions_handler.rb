@@ -1,4 +1,4 @@
-require 'promotions_parser'
+require_relative 'promotions_parser'
 
 class PromotionsHandler
   def initialize promotions, products

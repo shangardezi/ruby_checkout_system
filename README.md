@@ -5,14 +5,20 @@ What are flexible promo rules I hear you say?
 It simply means the json file `promo_rules.json` is responsible for dictating the available promotions for the checkout system
 
 
-##Quick start
+## Specification
 
-Clone the git repo 'https://github.com/cnak/ruby_boilerplate.git'
+```
+Our marketing team want to offer promotions as an incentive for our customers to purchase these items.
+If you spend over £60, then you get 10% off of your purchase. If you buy 2 or more very cheap chairs
+then the price drops to £8.50.
+Our check-out can scan items in any order, and because our promotions will change, it needs to be
+flexible regarding our promotional rules.
+The interface to our checkout looks like this (shown in Ruby):
+co = Checkout.new(promotional_rules)
+co.scan(item)
+co.scan(item)
+price = co.total
+```
 
-##Instructions
 
-1. Clone the repo
-2. Run 'bundle exec install'
-3. Run 'guard' command in the terminal to start watching changes
-4. Place your spec files within the spec folder and any functionality code with the 'lib' folder
-# ruby_checkout_system
+## How to get 

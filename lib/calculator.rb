@@ -1,4 +1,4 @@
-require 'promotions_handler'
+require_relative 'promotions_handler'
 
 class Calculator
   def initialize promotions, products

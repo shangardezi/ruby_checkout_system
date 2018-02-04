@@ -2,7 +2,7 @@ require 'promotions_handler'
 
 RSpec.describe PromotionsHandler do
 
-  subject { described_class.new promo_rules, dummy_products }
+  subject { described_class.new promo_rules_json, dummy_products }
 
   describe '#apply_volume_discounts' do
     let(:basket) { { '001': 2 } }
