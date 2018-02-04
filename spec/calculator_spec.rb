@@ -10,7 +10,7 @@ RSpec.describe Calculator do
     before do
       allow(subject).to receive(:get_discounted_price).and_return false
     end
-    
+
     it 'returns correct total for basket' do
       expect(subject.total(basket)).to eq 121.5
     end
