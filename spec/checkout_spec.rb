@@ -6,7 +6,7 @@ RSpec.describe Checkout do
   describe '#scan' do
     let(:invalid_product_error) { Checkout::PRODUCT_NOT_FOUND_ERROR }
     it "raises a product not found error if product doesn't exist" do
-      expect(subject.scan('foo_bar') ).to raise_error invalid_product_error
+      expect{ subject.scan('foo_bar') }.to raise_error invalid_product_error
     end
   end
 
