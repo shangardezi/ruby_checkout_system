@@ -8,7 +8,8 @@ class Checkout
                 '003': { name: 'Funkly light', price: 19.95 } }
 
   def initialize promo_rules
-
+    promotions = promo_rules
+    @basket = Hash.new 0
   end
 
   def scan product_code
@@ -22,6 +23,6 @@ class Checkout
   private
 
     def add_to_basket product_code
-
+      @basket[product_code.to_sym] += 1
     end
 end
