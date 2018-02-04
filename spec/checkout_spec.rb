@@ -1,4 +1,5 @@
 require 'checkout'
+require 'pry'
 
 RSpec.describe Checkout do
 
@@ -18,25 +19,16 @@ RSpec.describe Checkout do
   end
 
   describe '#total' do
+    let(:basket) { {'001': 3} }
+    let(:calculator) { subject.calculator }
 
-  end
-
-  private
-
-    def promo_rules
-      {
-        value_rules: [
-           {
-             minimum_value: 60,
-             discount_decimal: 0.1
-           }
-                     ],
-        volume_rules: {
-          "001": {
-            minimum_volume_required: 2,
-            discounted_price: 8.50
-          }
-        }
-      }
+    before do
+      3.times { subject.scan('001') }
     end
+
+    it 'requests total from the Calculator' do
+      expect(calculator).to receive(:total).with(basket)
+      subject.total
+    end
+  end
 end
